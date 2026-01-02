@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Текущий баланс</title>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div>
+        <div class="title">Текущий баланс</div>
+        <div class="subtitle" id="subtitle">Загрузка…</div>
+      </div>
+      <button class="ghost" id="refreshBtn" type="button">Обновить</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero__card">
+        <div class="hero__label">Итого по кассам</div>
+        <div class="hero__value" id="total">—</div>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="search" type="text" placeholder="Поиск по статье..." />
+        </div>
+        <div class="select">
+          <select id="sort">
+            <option value="amount_desc">Сумма: по убыванию</option>
+            <option value="amount_asc">Сумма: по возрастанию</option>
+            <option value="name_asc">Название: А→Я</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="list">
+      <div class="list__head">
+        <div>Статья</div>
+        <div class="right">Сумма</div>
+      </div>
+      <div class="items" id="items"></div>
+    </section>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
